@@ -57,3 +57,10 @@ This repo is setup in a way that if you enable a personal drone server to build 
  
 * Build local ```DRONE_REPO_OWNER=ipedrazas DRONE_REPO_NAME=drone-helm drone exec```
 * on your server just make sure you have DOCKER_USERNAME, DOCKER_PASSWORD, and DOCKERHUB_REPO set as secrets
+
+## EAI build
+
+```sh
+docker build . --build-arg VERSION=v2.9.1 -t images.borgy.elementai.lan/drone-helm:{HELM_VERSION}
+docker push images.borgy.elementai.lan/drone-helm:{HELM_VERSION}
+```
